@@ -1,0 +1,47 @@
+<div>
+    <h2>Upload CSV File</h2>
+    <input type="file" (change)="onFileSelected($event)" />
+    
+    <table mat-table class="mat-elevation-z8">
+    <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"> -->
+      <!-- Checkbox untuk memilih data -->
+      <!-- <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <mat-checkbox (change)="selectRow(element)"></mat-checkbox>
+        </td>
+      </ng-container> -->
+  
+      <!-- Kolom lainnya -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="nama">
+        <th mat-header-cell *matHeaderCellDef> Nama </th>
+        <td mat-cell *matCellDef="let element"> {{element.nama}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="telepon">
+        <th mat-header-cell *matHeaderCellDef> Telepon </th>
+        <td mat-cell *matCellDef="let element"> {{element.telepon}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="alamat">
+        <th mat-header-cell *matHeaderCellDef> Alamat </th>
+        <td mat-cell *matCellDef="let element"> {{element.alamat}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <button mat-raised-button color="primary" (click)="importSelectedData()">Import Selected Data</button>
+  </div>
+  
